@@ -1,0 +1,41 @@
+
+> db.users.insert({"first_name":"Daveta","last_name":"Duley","email":"dduley0@rambler.ru","gender":"Bigender","ip_address":"162.55.184.20","age":50})
+
+> db.users.insert({"first_name":"Tamiko","last_name":"Menezes","email":"tmenezes1@tinyurl.com","gender":"Male","ip_address":"188.107.169.196","age":59})
+
+> db.users.insert({"first_name":"Timothee","last_name":"Hembling","email":"thembling2@army.mil","gender":"Non-binary","ip_address":"238.224.113.238","age":33})
+
+> db.users.insert({"first_name":"Eddi","last_name":"Anster","email":"eanster3@msu.edu","gender":"Female","ip_address":"172.141.113.167","age":14})
+
+> db.users.insert({"first_name":"Eugenia","last_name":"Moxsom","email":"emoxsom4@soundcloud.com","gender":"Non-binary","ip_address":"17.79.101.254","age":42})
+
+> db.users.insert({"first_name":"Lilly","last_name":"Giraths","email":"lgiraths5@wikia.com","gender":"Bigender","ip_address":"10.228.123.246","age":6})
+
+> db.users.insert({"first_name":"Brigit","last_name":"Kigelman","email":"bkigelman6@bing.com","gender":"Female","ip_address":"205.92.217.219","age":17})
+
+> db.users.insert({"first_name":"Simeon","last_name":"MacFaell","email":"smacfaell7@globo.com","gender":"Agender","ip_address":"210.179.226.74","age":46})
+
+> db.users.insert({"first_name":"Jeanna","last_name":"Howship","email":"jhowship8@time.com","gender":"Polygender","ip_address":"171.237.66.30","age":43})
+
+> db.users.insert({"first_name":"Karia","last_name":"Darbon","email":"kdarbon9@sitemeter.com","gender":"Bigender","ip_address":"52.186.97.36","age":56})
+
+
+
+> db.users.insertMany([{"first_name":"Koral","last_name":"Szimoni","email":"kszimonia@dyndns.org","gender":"Genderqueer","ip_address":"177.212.219.219","age":12},{"first_name":"Mireille","last_name":"Romanski","email":"mromanskib@topsy.com","gender":"Genderqueer","ip_address":"18.108.167.237","age":69},{"first_name":"Rick","last_name":"Drever","email":"rdreverc@mozilla.org","gender":"Agender","ip_address":"225.208.191.251","age":27},{"first_name":"Cleo","last_name":"Huison","email":"chuisond@amazonaws.com","gender":"Female","ip_address":"10.214.122.206","age":19},{"first_name":"Keriann","last_name":"Cargo","email":"kcargoe@goodreads.com","gender":"Male","ip_address":"31.114.142.66","age":73},{"first_name":"Earlie","last_name":"Gumb","email":"egumbf@twitpic.com","gender":"Female","ip_address":"178.83.38.22","age":30},{"first_name":"Stacy","last_name":"Whipp","email":"swhippg@microsoft.com","gender":"Non-binary","ip_address":"182.46.241.222","age":48},{"first_name":"Filberto","last_name":"Pendrey","email":"fpendreyh@unc.edu","gender":"Genderfluid","ip_address":"106.100.11.156","age":15},{"first_name":"Jeffie","last_name":"Threadkell","email":"jthreadkelli@blogger.com","gender":"Non-binary","ip_address":"170.74.241.134","age":34},{"first_name":"Ken","last_name":"Adamovitz","email":"kadamovitzj@ocn.ne.jp","gender":"Female","ip_address":"89.124.185.179","age":68},{"first_name":"Rusty","last_name":"Entwhistle","email":"rentwhistlek@creativecommons.org","gender":"Genderqueer","ip_address":"64.6.113.116","age":77}]) 
+
+
+>db.users.find({"age":{$ne:40}}).pretty()  
+
+
+> db.users.findOne({"gender":"Male"})    
+
+> db.users.update({first_name:"Tamiko"},{$set:{first_name:"Rahul"}}) 
+ db.users.update({first_name:"Lilly"},{$set:{first_name:"Swati"}})   
+> db.users.update({last_name:"Menezes"},{$set:{last_name:"Kaithwas"}})  
+
+> db.users.updateMany({gender:"Female"},{$set:{gender:"F"}})         
+> db.users.remove({"id":"619d36ef0449b2e99d72c4f3"})  
+ db.users.deleteOne({"gender":"F"})   
+
+db.users.deleteMany({gender:"Male"})   
+ db.users.drop()  
