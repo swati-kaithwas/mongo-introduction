@@ -1,0 +1,21 @@
+mongo
+show dbs;
+ues test
+ db.users.insert({movies_name:"wwwwo"})  
+> db.users.find({"movie_name":{$eq:"In Good Company"}}).pretty() 
+> db.users.find({"movie_name":{$ne:"In Good Company"}}).pretty()  
+> db.users.find({"budget":{$gt:"$10401.85"}}).pretty()  
+> db.users.find({"budget":{$gte:"$10401.85"}}).pretty() 
+> db.users.find({"budget":{$lt:"$10401.85"}}).pretty()    
+> db.users.find({"budget":{$lte:"$10401.85"}}).pretty()  
+
+db.users.find({$and:[{"production_year":2000},{"budget":{$gt:"$10000"}}]}).pretty()  
+db.users.find({$or:[{"production_year":2000},{"budget":{$gt:"$10000"}}]}).pretty()  
+db.users.find({$nor:[{"production_year":2000},{"budget":{$gt:"$10000"}}]}).pretty()
+
+db.movies.find({$or:[{"production_year":{$eq:2000}},{"budget":{$eq:10000}}]}).pretty()  
+db.movies.find({$nor:[{"production_year":{$eq:2000}},{"budget":{$eq:10000}}]}).pretty()
+db.movies.find({"production_year":{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).pretty()
+db.movies.find({"production_year":{$gt:1900}}).sort({"production_year":-1}).pretty()
+db.movies.find({"production_year":{$gt:1900}}).sort({"production_year":-1}).skip(10).limit(5).pretty()
+db.movies.find({"production_year":{$lt:2020}},{"movie_genre":0}).sort({"production_year":-1,"movie_name":1}).limit(10).pretty() 
